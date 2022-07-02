@@ -1,4 +1,4 @@
-# Lec1: Intro, Number Rep
+# Lec01: Intro, Number Rep
 
 ## Six Great Ideas in Computer Architecture
 
