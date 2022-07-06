@@ -107,7 +107,7 @@ RISC-V汇编代码中的注释以#开头
 
 含有'i'的指令将src2替换为立即数
 
-立即数最多为12bit，解释为**符号扩展的二进制补码值**
+立即数最多为**12bit**，解释为**符号扩展的二进制补码值**
 
 RISC-V中不存在*subi*指令，因为可以用*addi*代替，减少指令数量
 
@@ -360,3 +360,13 @@ A list of the ecall values supported by venus:
 https://github.com/ThaumicMekanism/venus/wiki/Environmental-Calls
 
 Linux实际上使用寄存器87来选择调用的函数
+
+## Summary
+
+- RISC-V Instructions
+  - Arithmetic: add, sub, addi, mult, div, rem
+  - Data Transfer: lw, sw, lb, sb, lbu
+  - Branching: beq, bne, bge, blt, jal, j, jalr, jr
+  - Bitwise: and, or, xor, andi, ori, xori
+  - Shifting: sll, srl, sra, slli, srli, srai
+
