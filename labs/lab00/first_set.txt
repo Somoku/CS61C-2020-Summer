@@ -1,3 +1,8 @@
+Show file permissions for all files in a directory
+Move files from one directory to the next
+Change a file’s permissions
+Show the directory you’re currently in
+Check if a host is online
 Which command walks a file hierarchy in search of a keyword?
 Which command displays information about processes running on your machine?
 Which command terminates a process?
