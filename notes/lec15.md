@@ -56,6 +56,7 @@ Cache size指的是**所存数据的大小**（C Bytes），可以由此得到ca
 1. 检查每个cache slot
 2. 如果valid bit = 0，检查下一个
 3. 如果valid bit = 1并且tag匹配，则返回相应数据（Cache必须存储valid bit和tag）
+   - tag的比较过程是并行的
 
 ## Hits, Misses and Replacement Policies
 
