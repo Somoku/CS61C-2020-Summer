@@ -40,6 +40,8 @@ cache中存放着数据 + Tag + Valid bit + Dirty bit(for write-back)，没有�
 - N-way set-associative: 将cache拆分为多个组，每个组有N个cache slot，Index filed对应组号，一个块可以放到相应组的任意一个slot中
   - N也被称为associativity
 
+<img src="assets/image-20220714154837822.png" alt="image-20220714154837822" style="zoom:67%;" />
+
 1. 取出index
 2. 检查index对应组内的每一个cache slot的valid bit
 3. 如果valid bit = 1，检查tag是否匹配
