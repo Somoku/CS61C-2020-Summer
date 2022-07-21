@@ -1,0 +1,6 @@
+1. t0
+2. s0
+3. s1, s2
+4. section labeled by "loop"
+5. use "la" to get pointers, "add" to change pointers,
+   "lw" to get the pointed value, "sw" to store the pointed value. 
