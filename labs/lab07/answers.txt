@@ -1,51 +1,77 @@
 Exercise 1
 	Scenario 1
-		1. 
-		2.
-		3.
+		1. Because step size in bytes is exactly equal to cache size in bytes.
+		2. Still 0. Because step size doesn't change.
+		3. Change a1 to 1.
 
 	Scenario 2
-		1.
-		2.
-		3.
-		4.
-		5.
+		1. 64.
+		2. Every 4 accesses = 1 miss + 3 hits.
+		3. Hit rate = 3 hits / 4 accesses = 0.75. 
+		4. Hit rate will approach to 1.
+		5. We should try to access 256 bytes of the array at a time and apply all
+		  of the functions to that section of array so we can be completely done with it before
+		  moving on, thereby keeping that section of array hot in the cache and not having
+		  to circle back to it later on!
 
 	Scenario 3
-		1.
-		2.
-		3.
-		4.
-		5.
+		1. Hit rate of L1 cache is 0.5. Hit rate of L2 cache is 0. Overall the hit rate is 0.5.
+		2. 32 accesses t0 L1 and 16 misses.
+		3. 16 accesses to L2. Every time L1 misses, we access L2.
+		4. Increase block size of L2 cache.
+		5. As we slowly increase the number of blocks in L1, the hit rates remain the same.
+		  As for L1 block size, L1 hit rate will increase and L2 hit rate will remain the same.
 
 Exercise 2
-	ijk:
-	ikj:
-	jik:
-	jki:
-	kij:
-	kji:
+	ijk:    n = 1000, 1.422 Gflop/s
+	ikj:    n = 1000, 1.000 Gflop/s
+	jik:    n = 1000, 1.499 Gflop/s
+	jki:    n = 1000, 11.613 Gflop/s
+	kij:    n = 1000, 1.249 Gflop/s
+	kji:    n = 1000, 7.385 Gflop/s
 
-	1.
-	2.
-	3.
+	1. jki. Because the average step size of A, B, C is the smallest.
+	2. ikj. Because the average step size of A, B, C is the largest.
+	3. The less stride, the better performance.
 
 Exercise 3
 	Part 1
 		blocksize = 20, n = 100: 
+			Testing naive transpose: 0.006 milliseconds
+			Testing transpose with blocking: 0.009 milliseconds
 		blocksize = 20, n = 1000: 
+			Testing naive transpose: 2.365 milliseconds
+			Testing transpose with blocking: 2.561 milliseconds
 		blocksize = 20, n = 2000: 
+			Testing naive transpose: 15.055 milliseconds
+			Testing transpose with blocking: 4.009 milliseconds
 		blocksize = 20, n = 5000: 
+			Testing naive transpose: 234.679 milliseconds
+			Testing transpose with blocking: 37.423 milliseconds
 		blocksize = 20, n = 10000: 
+			Testing naive transpose: 1107.4 milliseconds
+			Testing transpose with blocking: 202.933 milliseconds
 
-		1.
-		2.
+		1. When n = 2000.
+		2. Because it requires more computing on cache blocking process.
 
 	Part 2
 		blocksize = 50, n = 10000:
+			Testing naive transpose: 1071.38 milliseconds
+			Testing transpose with blocking: 148.453 milliseconds
 		blocksize = 100, n = 10000:
+			Testing naive transpose: 1318.45 milliseconds
+			Testing transpose with blocking: 115.72 milliseconds
 		blocksize = 500, n = 10000:
+			Testing naive transpose: 1437.68 milliseconds
+			Testing transpose with blocking: 137.503 milliseconds
 		blocksize = 1000, n = 10000:
+			Testing naive transpose: 1092.14 milliseconds
+			Testing transpose with blocking: 146.564 milliseconds
 		blocksize = 5000, n = 10000:
+			Testing naive transpose: 1064.35 milliseconds
+			Testing transpose with blocking: 1015.73 milliseconds
 
-		1.
+		1. The performance increases before blocksize increases to 100 but 
+		  decreases after it. Because blocksize is larger than the block
+		  size of hardware block size.
